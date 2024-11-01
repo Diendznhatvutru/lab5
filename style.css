@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+section {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+/* /////////////////////////////////////////////////////// */
+header {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 0px;
+  background-color: #333;
+  color: white;
+  margin-left: 0;
+}
+
+header h1 {
+  font-size: 2em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.watch-time {
+  display: flex;
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  gap: 5px; /* Khoảng cách giữa các phần tử */
+  margin-top: 25px;
+}
+
+.watch-time span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.watch-time p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.watch-time p i {
+  margin-left: 5px; /* Khoảng cách giữa chữ 'watched' và icon */
+  color: hsl(0, 0%, 100%); /* Màu của icon */
+  font-size: 15px; /* Kích thước icon */
+}
+
+.view-activity {
+  font-size: 0.85em;
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px; /* Khoảng cách bên trái */
+}
+
+.view-activity:hover {
+  text-decoration: underline;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.tabs a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px; /* Đặt trước một khoảng cách dưới mỗi liên kết */
+  border-bottom: 5px solid transparent; /* Border ẩn để giữ kích thước */
+}
+
+.tabs a.active {
+  border-bottom: 5px solid white;
+}
+
+.tabs a:hover,
+.tabs a:focus {
+  border-bottom: 5px solid white;
+}
+/* //////////////////////////////////////////////////////////////////////////// */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các phần tử xuống hàng */
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.filter-labels {
+  display: flex; /* Căn chỉnh các nhãn thành hàng ngang */
+  gap: 120px; /* Khoảng cách giữa các nhãn */
+  padding-bottom: 10px;
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  margin-bottom: 10px; /* Khoảng cách dưới cùng của hàng nhãn */
+}
+
+.sort-filter {
+  flex: 1; /* Đảm bảo mỗi phần tử có không gian đều */
+  min-width: 100px; /* Kích thước tối thiểu cho mỗi phần tử */
+  max-width: 160px;
+  padding-right: 10px;
+}
+
+.filter-category,
+.filter-progress,
+.filter-instructor,
+.filter-reset {
+  flex: 1; /* Đảm bảo mỗi phần tử có không gian đều */
+  min-width: 80px; /* Kích thước tối thiểu cho mỗi phần tử */
+  max-width: 110px;
+  padding-right: 10px;
+}
+
+.filters button {
+  background-color: #f5f5f5;
+  color: Grey;
+  text-align: left;
+  padding: 8px 10px;
+  padding-left: 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Đảm bảo nút button chiếm toàn bộ không gian */
+  box-sizing: border-box;
+}
+
+.filter-search {
+  flex: 1; /* Đảm bảo mỗi phần tử có không gian đều */
+  min-width: 100px; /* Kích thước tối thiểu cho mỗi phần tử */
+}
+
+.filters select,
+.filters input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%; /* Làm cho các input và select chiếm toàn bộ không gian */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
+}
+
+.filter-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-search {
+  position: relative;
+  width: 400px; /* Đặt chiều rộng cố định cho thanh tìm kiếm */
+}
+.filter-search-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 250px;
+}
+.sort-filter select:hover,
+.filter-category select:hover,
+.filter-progress select:hover,
+.filter-instructor select:hover,
+.filter-reset button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.sort-filter select,
+.filter-category select,
+.filter-progress select,
+.filter-instructor select,
+.filter-reset button {
+  min-width: 100px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.search-bar:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.search-icon:hover {
+  background-color: #333;
+}
+.filter-reset button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.filter-reset button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+.search-bar {
+  width: 100%;
+  padding: 8px 40px 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Đảm bảo wrapper có chiều rộng cố định và không thay đổi khi thay đổi kích thước màn hình */
+.filter-search-wrapper {
+  width: 250px; /* Độ rộng cố định */
+}
+
+/* Điều chỉnh lại thành phần thanh tìm kiếm */
+.filter-search {
+  position: relative;
+  width: 100%;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 40px 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Điều chỉnh lại icon tìm kiếm */
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  pointer-events: none;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+.course-list {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các card nằm trên nhiều hàng */
+  gap: 15px; /* Khoảng cách giữa các course card */
+  padding-top: 0px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column; /* Để các thành phần trong card xếp chồng lên nhau */
+  width: calc(
+    25% - 15px
+  ); /* Tính toán chiều rộng của mỗi card (4 cột) trừ khoảng cách */
+  box-sizing: border-box; /* Đảm bảo padding và border nằm trong chiều rộng */
+  padding-top: 0px;
+}
+
+.rating-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Giữ cho các phần tử con xếp theo cột */
+  padding-top: 10px; /* Thêm khoảng cách trên để thanh tiến trình không bị che khuất */
+}
+
+.course-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.course-progress {
+  background-color: #093f7a;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s;
+}
+
+.rating-status {
+  display: flex; /* Sử dụng flexbox để căn chỉnh completion-status và stars thành hàng ngang */
+  justify-content: space-between; /* Căn giữa không gian giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  width: 100%; /* Đảm bảo phần tử này chiếm toàn bộ chiều rộng */
+  flex-wrap: nowrap;
+  margin-top: 5px; /* Thêm khoảng cách trên để tách thanh tiến trình với trạng thái hoàn thành */
+}
+
+.completion-status {
+  margin: 0; /* Không có khoảng cách mặc định */
+  flex: 1 0 auto;
+}
+
+.stars {
+  margin-left: auto; /* Đẩy stars về bên phải */
+  display: inline-block; /* Đảm bảo stars không chiếm quá nhiều không gian */
+  text-align: right; /* Căn lề bên phải */
+  font-size: 12px;
+}
+
+.rating-container p {
+  margin-top: 5px; /* Khoảng cách giữa rating-status và Leave a rating */
+}
+
+h2 {
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+p {
+  font-size: 10px;
+  text-align: right;
+}
+
+/* Icon style for the watched section */
+.watch-time i {
+  margin-left: 5px; /* Space between the text and the icon */
+  font-size: 1em; /* Adjust size if necessary */
+  color: #007bff; /* Change color to match the theme */
+}
+
+/* ////////////////////////////////////////////////////////// */
+/* Learning.html */
+
+.learning-paths {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.learning-path-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0;
+}

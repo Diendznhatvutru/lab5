@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+section {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+/* /////////////////////////////////////////////////////// */
+header {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 0px;
+  background-color: #333;
+  color: white;
+  margin-left: 0;
+}
+
+header h1 {
+  font-size: 2em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.watch-time {
+  display: flex;
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  gap: 5px; /* Khoảng cách giữa các phần tử */
+  margin-top: 25px;
+}
+
+.watch-time span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.watch-time p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.watch-time p i {
+  margin-left: 5px; /* Khoảng cách giữa chữ 'watched' và icon */
+  color: hsl(0, 0%, 100%); /* Màu của icon */
+  font-size: 15px; /* Kích thước icon */
+}
+
+.view-activity {
+  font-size: 0.85em;
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px; /* Khoảng cách bên trái */
+}
+
+.view-activity:hover {
+  text-decoration: underline;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.tabs a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px; /* Đặt trước một khoảng cách dưới mỗi liên kết */
+  border-bottom: 5px solid transparent; /* Border ẩn để giữ kích thước */
+}
+
+.tabs a.active {
+  border-bottom: 5px solid white;
+}
+
+.tabs a:hover,
+.tabs a:focus {
+  border-bottom: 5px solid white;
+} /* Phần chứa các thẻ học tập */
+section.learning-paths {
+  padding: 2em;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.learning-path-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 600px; /* Tăng chiều rộng thẻ */
+  padding: 2em;
+  text-align: left;
+  margin-bottom: 1em; /* Tạo khoảng cách giữa các thẻ */
+  margin-right: 100px;
+}
+
+.learning-path-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 1em; /* Tăng khoảng cách giữa logo và tên */
+  margin-bottom: 1em;
+}
+
+.learning-path-card .logo img {
+  width: 60px; /* Tăng kích thước logo */
+  height: auto;
+}
+
+.learning-path-card h3 {
+  font-size: 1.4em; /* Tăng kích thước chữ của tên khóa học */
+  color: #333;
+  margin: 0;
+}
+
+.learning-path-card p {
+  font-size: 1em; /* Tăng kích thước chữ cho phần mô tả */
+  color: #666;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  height: 10px; /* Tăng chiều cao của thanh tiến trình */
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5em;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background-color: #4caf50;
+}
